@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Reflection
 {
-    class Car
+    public class Car
     {
 
         private string Make { get; set; }
