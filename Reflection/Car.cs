@@ -9,11 +9,11 @@ namespace Reflection
     class Car
     {
 
-        public string Make { get; set; }
-        public string Model { get; set; }
-        public string Registration { get; set; }
-        public string YearOfRegistration { get; set; }
-        public decimal CurrentValue { get; set; }
+        private string Make { get; set; }
+        private string Model { get; set; }
+        private string Registration { get; set; }
+        private string YearOfRegistration { get; set; }
+        private decimal CurrentValue { get; set; }
 
         /// <summary>
         /// The car model contructor
@@ -31,7 +31,19 @@ namespace Reflection
             YearOfRegistration = yearOfRegistration;
             CurrentValue = currentValue;
         }
+        public string Value()
+        {
+            return CurrentValue.ToString("C2");
+        }
 
+        public string Year()
+        {
+            return YearOfRegistration;
+        }
+        public override string ToString()
+        {
+            return $"The {Make} {Model} with the registration of '{Registration}' was registered in {YearOfRegistration} and has a value of {Value()}";
+        }
 
     }
 }
